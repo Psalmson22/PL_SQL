@@ -1,0 +1,36 @@
+PROGRAM 1
+declare
+n1 number := 25;
+v1 varchar(5) not null := 'HEY';
+begin
+dbms_output.put_line(to_char(n1));
+dbms_output.put_line('The value of V1 is '|| v1);
+end;
+/
+
+
+PROGRAM 2
+DECLARE
+N1 NUMBER(4);
+BEGIN
+N1:=5
+DBMS_OUTPUT.PUT_LINE(TO_CHAR(N1));
+N1 := N1+4; 
+DBMS_OUTPUT.PUT_LINE('THE VALUE OF N1 INCREMENTED BY 4 IS ' || TO_CHAR(N1 + 4));
+END;
+/
+
+PROGRAM 4
+DECLARE
+N1 NUMBER(4);
+N2 NUMBER(3);
+RESULT NUMBER;
+BEGIN
+N1 := 7;
+N2 := 4;
+RESULT = N1 + N2;
+DBMS_OUTPUT.PUT_LINE('THE SUM IS '|| TO_CHAR(RESULT));
+RESULT = N1 - N2;
+DBMS_OUTPUT.PUT_LINE('THE DIFFERENCE IS '|| TO_CHAR(RESULT));
+END;
+/ 
