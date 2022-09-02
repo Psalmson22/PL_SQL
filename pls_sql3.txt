@@ -1,0 +1,67 @@
+#SELECT STATEMENT IN PL/SQL
+select salary
+from employees
+where first_name = 'Lex';
+
+#WRITE A PL/SQL BLOCK TO RETRIEVE SALARY OF EMPLOYEE WHOSE FIRST_NAME IS LEX
+declare
+vsalary number(10,2);
+begin
+
+select salary into vsalary
+from employees
+where first_name = 'Lex';
+
+dbms_output.put_line('The salary of Lex is: ' to_char(vsalary));
+
+end;
+/
+
+#RETRIEVE SALARY AND DEPT NUMBER
+declare
+vsalary number(10,2);
+vdept number(4);
+
+begin
+select salary, department_id
+into vsalary, vdept
+from employees
+where first_name = 'Lex';
+dbms_output.put_line('The salary of Lex is: ' to_char(vsalary));
+dbms_output.put_line('The department of Lex is: 'to_char(vdept));
+end;
+/
+
+
+
+EXCERCISE 1
+declare
+vjob varchar2(10);
+
+begin
+select employee_job
+into vjob
+from employees 
+where employee_num = 150;
+
+dbms_output.put_line('The employee 150 holds the job of: ' || vjob);
+end;
+/
+
+EXCERCISE 2
+declare
+vjob varchar2(10);
+vemail_address;
+vhire_date;
+
+begin
+select employee_job, email_address, hire_date
+into vjob, vemail_address, vhire_date
+from employees
+where employee_num = 150;
+
+dbms_output.put_line('The employee 150 holds the job of: ' || vjob);
+dbms_output.put_line('The email address of employee 150 is: ' || vemail_address);
+dbms_output.put_line('The employee 150 was hired on: '|| vhire_date);
+end;
+/
